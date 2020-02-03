@@ -8,10 +8,10 @@ export default (templateString, customVariables = Map()) => {
   }
 
   const substitutions = {
-    '%t': `<${formatDate(new Date(), 'YYYY-MM-DD ddd')}>`,
-    '%T': `<${formatDate(new Date(), 'YYYY-MM-DD ddd HH:mm')}>`,
-    '%u': `[${formatDate(new Date(), 'YYYY-MM-DD ddd')}]`,
-    '%U': `[${formatDate(new Date(), 'YYYY-MM-DD ddd HH:mm')}]`,
+    '%t': `<${formatDate(new Date(), 'yyyy-MM-dd eee')}>`,
+    '%T': `<${formatDate(new Date(), 'yyyy-MM-dd eee HH:mm')}>`,
+    '%u': `[${formatDate(new Date(), 'yyyy-MM-dd eee')}]`,
+    '%U': `[${formatDate(new Date(), 'yyyy-MM-dd eee HH:mm')}]`,
   };
 
   customVariables.entrySeq().forEach(([key, value]) => {
