@@ -1,5 +1,5 @@
 import formatDate from 'date-fns/format';
-import parseDate from 'date-fns/parse';
+import parse from 'date-fns/parse';
 import {
   addHours,
   addDays,
@@ -51,10 +51,10 @@ export const getCurrentTimestamp = ({ isActive = true, withStartTime = false } =
 
   const timestamp = {
     isActive,
-    year: formatDate(time, 'YYYY'),
+    year: formatDate(time, 'yyyy'),
     month: formatDate(time, 'MM'),
-    day: formatDate(time, 'DD'),
-    dayName: formatDate(time, 'ddd'),
+    day: formatDate(time, 'dd'),
+    dayName: formatDate(time, 'eee'),
     startHour: null,
     startMinute: null,
     endHour: null,
@@ -68,14 +68,14 @@ export const getCurrentTimestamp = ({ isActive = true, withStartTime = false } =
   };
 
   if (withStartTime) {
-    timestamp.startHour = formatDate(time, 'HH');
+    timestamp.startHour = formatDate(time, 'hh');
     timestamp.startMinute = formatDate(time, 'mm');
   }
 
   return timestamp;
 };
 
-export const getCurrentTimestampAsText = () => `<${formatDate(new Date(), 'YYYY-MM-DD ddd')}>`;
+export const getCurrentTimestampAsText = () => `<${formatDate(new Date(), 'yyyy-MM-dd eee')}>`;
 
 export const dateForTimestamp = timestamp => {
   const { year, month, day, startHour, startMinute } = timestamp.toJS();
@@ -85,7 +85,7 @@ export const dateForTimestamp = timestamp => {
     timestampString += ` ${startHour.padStart(2, '0')}:${startMinute}`;
   }
 
-  return parseDate(timestampString);
+  return parse(timestampString, 'yyyy-MM-dd', new Date());
 };
 
 export const addTimestampUnitToDate = (date, numUnits, timestampUnit) =>
@@ -147,14 +147,14 @@ export const applyRepeater = (timestamp, currentDate) => {
   }
 
   timestamp = timestamp
-    .set('day', formatDate(newDate, 'DD'))
-    .set('dayName', formatDate(newDate, 'ddd'))
+    .set('day', formatDate(newDate, 'dd'))
+    .set('dayName', formatDate(newDate, 'eee'))
     .set('month', formatDate(newDate, 'MM'))
-    .set('year', formatDate(newDate, 'YYYY'));
+    .set('year', formatDate(newDate, 'yyyy'));
 
   if (timestamp.get('startHour') !== undefined && timestamp.get('startHour') !== null) {
     timestamp = timestamp
-      .set('startHour', formatDate(newDate, 'HH'))
+      .set('startHour', formatDate(newDate, 'hh'))
       .set('startMinute', formatDate(newDate, 'mm'));
   }
 

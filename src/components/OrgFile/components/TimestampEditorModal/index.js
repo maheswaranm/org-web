@@ -22,7 +22,7 @@ export default class TimestampEditorModal extends PureComponent {
 
   handleAddEndTimestamp() {
     const { timestamp } = this.props;
-    const [year, month, day, dayName] = formatDate(new Date(), 'YYYY MM DD ddd').split(' ');
+    const [year, month, day, dayName] = formatDate(new Date(), 'yyyy MM dd eee').split(' ');
     this.props.onChange(
       timestamp.set(
         'secondTimestamp',

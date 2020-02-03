@@ -14,7 +14,7 @@ import { headerWithPath } from '../lib/org_utils';
 import sampleCaptureTemplates from '../lib/sample_capture_templates';
 
 import { isAfter, addSeconds } from 'date-fns';
-import parseDate from 'date-fns/parse';
+import parse from 'date-fns/parse';
 
 export const displayFile = (path, contents) => ({
   type: 'DISPLAY_FILE',
@@ -58,7 +58,7 @@ export const sync = ({
     .getFileContentsAndMetadata(path)
     .then(({ contents, lastModifiedAt }) => {
       const isDirty = getState().org.present.get('isDirty');
-      const lastServerModifiedAt = parseDate(lastModifiedAt);
+      const lastServerModifiedAt = parse(lastModifiedAt, 'yyyy-MM-dd', new Date());
       const lastSyncAt = getState().org.present.get('lastSyncAt');
 
       if (isAfter(lastSyncAt, lastServerModifiedAt) || forceAction === 'push') {

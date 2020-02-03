@@ -16,7 +16,7 @@ export default ({ lastServerModifiedAt, onPull, onPush, onCancel }) => {
       <br />
       <br />
       <div className="sync-confirmation-modal__last-sync-time">
-        {formatDate(lastServerModifiedAt, 'MMMM Do, YYYY [at] h:mm:ss a')}
+        {formatDate(lastServerModifiedAt, 'MMMM do, yyyy [at] h:mm:ss a')}
         <br />({formatDistanceToNow(lastServerModifiedAt)} ago)
       </div>
       <div className="sync-confirmation-modal__buttons-container">
