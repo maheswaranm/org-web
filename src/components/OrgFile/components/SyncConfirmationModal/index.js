@@ -8,6 +8,7 @@ import formatDate from 'date-fns/format';
 import { formatDistanceToNow } from 'date-fns';
 
 export default ({ lastServerModifiedAt, onPull, onPush, onCancel }) => {
+  console.log(lastServerModifiedAt);
   return (
     <Drawer>
       <h2 className="sync-confirmation-modal__header">Sync conflict</h2>
@@ -16,7 +17,7 @@ export default ({ lastServerModifiedAt, onPull, onPush, onCancel }) => {
       <br />
       <br />
       <div className="sync-confirmation-modal__last-sync-time">
-        {formatDate(lastServerModifiedAt, "MMMM do, yyyy 'at' h:mm:ss a")}
+        {formatDate(lastServerModifiedAt, "MMMM do, yyyy 'at' h:mm:ss aaaa")}
         <br />({formatDistanceToNow(lastServerModifiedAt)} ago)
       </div>
       <div className="sync-confirmation-modal__buttons-container">

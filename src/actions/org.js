@@ -58,7 +58,7 @@ export const sync = ({
     .getFileContentsAndMetadata(path)
     .then(({ contents, lastModifiedAt }) => {
       const isDirty = getState().org.present.get('isDirty');
-      const lastServerModifiedAt = parse(lastModifiedAt, 'yyyy-MM-dd', new Date());
+      const lastServerModifiedAt = parse(lastModifiedAt, "yyyy-MM-dd'T'HH:mm:ssxxx", new Date());
       const lastSyncAt = getState().org.present.get('lastSyncAt');
 
       if (isAfter(lastSyncAt, lastServerModifiedAt) || forceAction === 'push') {
