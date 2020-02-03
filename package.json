@@ -3,26 +3,26 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": "11.x"
+    "node": ">=11"
   },
   "dependencies": {
     "classnames": "^2.2.6",
-    "date-fns": "^1.30.1",
-    "dotenv": "^8.0.0",
+    "date-fns": "^2.9.0",
+    "dotenv": "^8.2.0",
     "dropbox": "^4.0.9",
-    "enzyme-adapter-react-16": "^1.1.1",
-    "immutable": "^3.8.2",
+    "enzyme-adapter-react-16": "^1.15.2",
+    "immutable": "^4.0.0-rc.12",
     "lodash": "^4.17.10",
-    "react": "^16.8.3",
-    "react-beautiful-dnd": "^11.0.0",
-    "react-collapse": "^4.0.3",
-    "react-dom": "^16.7.0-alpha.0",
-    "react-hotkeys": "^1.1.4",
+    "react": "^16.12.0",
+    "react-beautiful-dnd": "^12.2.0",
+    "react-collapse": "^5.0.1",
+    "react-dom": "^16.12.0",
+    "react-hotkeys": "^2.0.0",
     "react-motion": "^0.5.2",
-    "react-redux": "^6.0.1",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.5",
-    "redux": "^4.0.0",
+    "react-redux": "^7.1.3",
+    "react-router-dom": "^5.1.2",
+    "react-scripts": "^3.3.1",
+    "redux": "^4.0.5",
     "redux-linear-undo": "^1.0.8",
     "redux-thunk": "^2.3.0"
   },
@@ -34,11 +34,11 @@
     "postinstall": "npm install -g serve"
   },
   "devDependencies": {
-    "enzyme": "^3.3.0",
-    "enzyme-to-json": "^3.3.4",
-    "prettier": "^1.16.4",
+    "enzyme": "^3.11.0",
+    "enzyme-to-json": "^3.4.4",
+    "prettier": "^1.19.1",
     "raw.macro": "0.3.0",
-    "react-test-renderer": "^16.4.2"
+    "react-test-renderer": "^16.12.0"
   },
   "browserslist": [
     ">0.2%",
